@@ -5,21 +5,8 @@
  * Quick Find implementation
  *
  */
-class QuickFind
+class QuickFind extends BaseUnionFind
 {
-    private $nodes = array();
-
-    /**
-     * QuickFind constructor.
-     * @param $size - number of nodes in a list
-     */
-    function __construct(int $size)
-    {
-        for($i = 0; $i < $size; $i++){
-            $this->nodes[$i] = $i;
-        }
-    }
-
     /**
      * Check if $x connected with $y
      * @param $x - first node
@@ -48,11 +35,6 @@ class QuickFind
 
         }
 
-    }
-
-    public function __toString()
-    {
-        return print_r($this->nodes, true);
     }
 
 }

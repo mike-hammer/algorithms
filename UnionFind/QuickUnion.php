@@ -3,21 +3,8 @@
 /**
  * Quick Union implementation
  */
-class QuickUnion
+class QuickUnion extends BaseUnionFind
 {
-    private $nodes = array();
-
-    /**
-     * QuickUnion constructor.
-     * @param $size - number of nodes in a list
-     */
-    function __construct(int $size)
-    {
-        for($i = 0; $i < $size; $i++){
-            $this->nodes[$i] = $i;
-        }
-    }
-
     /**
      * Find root for given node
      * @param $x
@@ -51,11 +38,6 @@ class QuickUnion
         $yRoot = $this->root($y);
 
         $this->nodes[$xRoot] = $yRoot;
-    }
-
-    public function __toString()
-    {
-        return print_r($this->nodes, true);
     }
 
 }
