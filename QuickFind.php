@@ -13,7 +13,7 @@ class QuickFind
      * QuickFind constructor.
      * @param $size - number of nodes in a list
      */
-    function __construct($size)
+    function __construct(int $size)
     {
         for($i = 0; $i < $size; $i++){
             $this->nodes[$i] = $i;
@@ -26,7 +26,7 @@ class QuickFind
      * @param $y - second node
      * @return bool
      */
-    public function isConnected($x, $y)
+    public function isConnected(int $x, int $y) : bool
     {
         return $this->nodes[$x] == $this->nodes[$y];
     }
@@ -36,7 +36,7 @@ class QuickFind
      * @param $x - first node
      * @param $y - second node
      */
-    public function union($x, $y)
+    public function union(int $x, int $y)
     {
         $xId = $this->nodes[$x];
         $yId = $this->nodes[$y];

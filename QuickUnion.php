@@ -11,7 +11,7 @@ class QuickUnion
      * QuickUnion constructor.
      * @param $size - number of nodes in a list
      */
-    function __construct($size)
+    function __construct(int $size)
     {
         for($i = 0; $i < $size; $i++){
             $this->nodes[$i] = $i;
@@ -21,9 +21,9 @@ class QuickUnion
     /**
      * Find root for given node
      * @param $x
-     * @return bool|mixed
+     * @return int
      */
-    public function root($x)
+    public function root(int $x) : int
     {
         while($x != $this->nodes[$x]) $x = $this->nodes[$x];
         return $x;
@@ -35,7 +35,7 @@ class QuickUnion
      * @param $y - second node
      * @return bool
      */
-    public function isConnected($x, $y)
+    public function isConnected(int $x, int $y) : bool
     {
         return $this->root($x) == $this->root($y);
     }
@@ -45,7 +45,7 @@ class QuickUnion
      * @param $x - first node
      * @param $y - second node
      */
-    public function union($x, $y)
+    public function union(int $x, int $y)
     {
         $xRoot = $this->root($x);
         $yRoot = $this->root($y);
