@@ -1,5 +1,4 @@
 <?php
-
 /**
  * Quick Union implementation
  */
@@ -15,7 +14,6 @@ class QuickUnion extends BaseUnionFind
         while($x != $this->nodes[$x]) $x = $this->nodes[$x];
         return $x;
     }
-
     /**
      * Check if $x connected with $y
      * @param $x - first node
@@ -26,7 +24,6 @@ class QuickUnion extends BaseUnionFind
     {
         return $this->root($x) == $this->root($y);
     }
-
     /**
      * Link $x and $y nodes
      * @param $x - first node
@@ -36,8 +33,6 @@ class QuickUnion extends BaseUnionFind
     {
         $xRoot = $this->root($x);
         $yRoot = $this->root($y);
-
         $this->nodes[$xRoot] = $yRoot;
     }
-
 }
