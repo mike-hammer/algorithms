@@ -34,9 +34,13 @@ class WeightedQuickUnion extends BaseUnionFind
     public function find(int $x) : int
     {
         $this->validate($x);
-        while($x != $this->nodes[$x]) $x = $this->nodes[$x];
+        while($x != $this->nodes[$x]) {
+            $this->nodes[$x] = $this->nodes[$this->nodes[$x]]; // path compression
+            $x = $this->nodes[$x];
+        }
         return $x;
     }
+
 
     /**
      * Check if $x connected with $y
